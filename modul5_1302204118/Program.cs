@@ -5,7 +5,10 @@
     {
         static void Main(string[] args)
         {
-
+            SayaTubeVideo tube = new SayaTubeVideo("tutorial...");
+            tube.PrintVideoDetails();
+            tube.IncreasePlayCount(1);
+            tube.PrintVideoDetails();
         }
     }
 
@@ -59,7 +62,15 @@
             Console.WriteLine("Play Count\t:" + this.playCount.ToString());
         }
 
+        internal void PrintVideoDetails()
+        {
+            throw new NotImplementedException();
+        }
 
+        internal void IncreasePlayCount(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 
