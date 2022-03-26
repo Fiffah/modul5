@@ -5,10 +5,7 @@
     {
         static void Main(string[] args)
         {
-            SayaTubeVideo tube = new SayaTubeVideo("tutorial...");
-            tube.printVideoDetails();
-            tube.IncreasePlayCount(1);
-            tube.printVideoDetails();
+
         }
     }
 
