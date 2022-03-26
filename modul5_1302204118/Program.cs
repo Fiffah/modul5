@@ -6,9 +6,9 @@
         static void Main(string[] args)
         {
             SayaTubeVideo tube = new SayaTubeVideo("tutorial...");
-            tube.PrintVideoDetails();
+            tube.printVideoDetails();
             tube.IncreasePlayCount(1);
-            tube.PrintVideoDetails();
+            tube.printVideoDetails();
         }
     }
 
@@ -62,10 +62,7 @@
             Console.WriteLine("Play Count\t:" + this.playCount.ToString());
         }
 
-        internal void PrintVideoDetails()
-        {
-            throw new NotImplementedException();
-        }
+
 
         internal void IncreasePlayCount(int v)
         {
@@ -77,21 +74,21 @@
     public class SayaTubeUser
     {
         private int id;
-        internal string username;
-        List<SayaTubeVideo> uploadedVideos;
-        private static object Video;
+        private List<SayaTubeVideo> uploadedVideos;
+        private String Username;
 
-        public SayaTubeUser(string username)
+        public SayaTubeUser(String judul)
         {
-            Random shuffle = new Random();
-            id = shuffle.Next(0, 100000);
-            uploadedVideos = new List<SayaTubeVideo>();
+            Random ids = new Random();
+            id = ids.Next(0, 100000);
+            this.Username = null;
+            this.uploadedVideos = new List<SayaTubeVideo>();
         }
 
         public int GetTotalVideoPlayCount()
         {
             int total = 0;
-            foreach (SayaTubeVideo video in uploadedVideos)
+            foreach (SayaTubeVideo video in this.uploadedVideos)
             {
                 total += video.GetPlaycount();
             }
@@ -101,15 +98,14 @@
         public void AddVideo(SayaTubeVideo video)
         {
             uploadedVideos.Add(video);
-            this.AddVideo = AddVideo;
         }
 
-        public void PrintAllVideoPlaycount()
+        public void printAllvideoplayCount()
         {
-            Console.WriteLine("User : " + this.AddVideo);
             for (int i = 0; i < uploadedVideos.Count; i++)
             {
-                Console.WriteLine("Video " + (i + 1) + " Judul : " + uploadedVideos[i].GetTitle());
+                Console.WriteLine("username:" + Username);
+                Console.WriteLine("video:" + (i + 1) + ":" + uploadedVideos[i]);
             }
         }
     }
