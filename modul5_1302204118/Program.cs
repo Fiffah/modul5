@@ -1,14 +1,14 @@
-﻿namespace modul5_1302204118
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.Contracts;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace modul5_1302204118
 {
     using System.Diagnostics.Contracts;
-    class Program
-    {
-        static void Main(string[] args)
-        {
-
-        }
-    }
-
     public class SayaTubeVideo
     {
         int id;
@@ -67,7 +67,6 @@
         }
     }
 
-
     public class SayaTubeUser
     {
         private int id;
@@ -104,6 +103,27 @@
                 Console.WriteLine("username:" + Username);
                 Console.WriteLine("video:" + (i + 1) + ":" + uploadedVideos[i]);
             }
+        }
+    }
+    public class main
+    {
+        public static void Main()
+        {
+            SayaTubeVideo test = new(null);
+            test.printVideoDetails();
+
+            SayaTubeVideo baru = new("Tutorial bernafas menggunakan" +
+                " hidung dan mulut secara bergantian ");
+            baru.printVideoDetails();
+
+            SayaTubeVideo saya = new("Tutorial Design By Contract – Rizal Rafif Setiawan.");
+            saya.printVideoDetails();
+
+            for (int i = 0; i < 4; i++)
+            {
+                saya.increasePlayCount(123456789);
+            }
+            saya.printVideoDetails();
         }
     }
 }
